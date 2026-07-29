@@ -1,0 +1,62 @@
+import { Gem, Phone } from "lucide-react";
+
+function Hero() {
+  return (
+    <section className="hero" id="home">
+      <div className="hero-bg" aria-hidden="true">
+        <img
+          src="/images/hero-gems.png"
+          alt=""
+          className="hero-image"
+        />
+
+        <div className="hero-gradient" />
+        <div className="hero-blur-layer" />
+
+        <div className="hero-glow hero-glow-blue" />
+        <div className="hero-glow hero-glow-gold" />
+
+        <div className="particles" />
+        <div className="hero-light-sweep" />
+      </div>
+
+      <div className="container hero-content-wrapper">
+        <div className="hero-text-card">
+          <p className="section-label">
+            Exceptional provenance. Timeless presence.
+          </p>
+
+          <h1>
+            Heirloom-quality
+            <br />
+            natural gemstones
+          </h1>
+
+          <p className="hero-subtitle">
+            from Madagascar &amp; Sri Lanka
+          </p>
+
+          <p className="hero-description">
+            Suranga Gems is a private gemstone house devoted to rare, ethically
+            sourced stones. Our collection celebrates heritage, rarity and
+            personal connection.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#about" className="primary-button">
+              <Gem size={18} strokeWidth={1.7} />
+              Explore the Collection
+            </a>
+
+            <a href="#contact" className="secondary-button">
+              <Phone size={18} strokeWidth={1.7} />
+              Request a Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;

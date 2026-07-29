@@ -1,0 +1,60 @@
+import {
+  Gem,
+  Globe2,
+  Handshake,
+  ShieldCheck,
+} from "lucide-react";
+
+const values = [
+  {
+    icon: Gem,
+    title: "Rare Natural Origin",
+    description:
+      "Sourced from the world’s finest gemstone regions, every stone is chosen for its rarity and character.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Discreet Expertise",
+    description:
+      "A refined approach to sourcing and advisory, tailored for private clients and long-term partnerships.",
+  },
+  {
+    icon: Globe2,
+    title: "Worldwide Reach",
+    description:
+      "A global network of trusted partners ensures access to the most exclusive gem offerings.",
+  },
+  {
+    icon: Handshake,
+    title: "Bespoke Relationships",
+    description:
+      "Personal service, confidential guidance and care that extends beyond every transaction.",
+  },
+];
+
+function Values() {
+  return (
+    <section className="values-section section" id="values">
+      <div className="container">
+        <div className="section-heading centered">
+          <p className="section-label">Why Suranga Gems?</p>
+          <h2>Trust. Quality. Commitment.</h2>
+        </div>
+
+        <div className="values-grid">
+          {values.map(({ icon: Icon, title, description }) => (
+            <article className="value-item" key={title}>
+              <Icon className="value-icon" strokeWidth={1.4} />
+
+              <h3>{title}</h3>
+
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Values;

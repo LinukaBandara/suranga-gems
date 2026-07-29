@@ -1,0 +1,17 @@
+{
+  "name": "Suranga Gems",
+  "short_name": "Suranga Gems",
+  "description": "Exceptional natural gemstones from Madagascar and Sri Lanka.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f5ee",
+  "theme_color": "#073f34",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
