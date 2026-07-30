@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Gem, Phone } from "lucide-react";
+import { Gem } from "lucide-react";
 
 function Hero() {
   return (
@@ -60,18 +60,6 @@ function Hero() {
               />
 
               Discover Our Story
-            </Link>
-
-            <Link
-              to="/contact"
-              className="secondary-button"
-            >
-              <Phone
-                size={18}
-                strokeWidth={1.7}
-              />
-
-              Schedule a Consultation
             </Link>
           </div>
         </div>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Suranga Gems mark</title>
+  <desc id="desc">A refined faceted gemstone emblem</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f3dfb4"/>
+      <stop offset="0.48" stop-color="#d6ad63"/>
+      <stop offset="1" stop-color="#9d6b24"/>
+    </linearGradient>
+  </defs>
+  <path d="M31 52 57 24h46l26 28-49 83L31 52Z" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M31 52h98M57 24l23 28 23-28M49 52l31 83 31-83M31 52l49 83 49-83" fill="none" stroke="url(#gold)" stroke-width="3.4" stroke-linejoin="round"/>
+  <circle cx="80" cy="80" r="73" fill="none" stroke="#d6ad63" stroke-opacity=".22" stroke-width="1.5"/>
+</svg>

@@ -13,6 +13,13 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import GemDetailPage from "./pages/GemDetailPage";
+import JournalPage from "./pages/JournalPage";
+import JournalPostPage from "./pages/JournalPostPage";
+
+import { getGemstoneById } from "./data/gemstones";
+import { getArticleBySlug } from "./data/articles";
+import loaderLogo from "./assets/suranga-logo-mark.svg";
 
 const SITE_URL = "https://surangagems.com";
 
@@ -52,7 +59,52 @@ const PAGE_METADATA = {
     imageAlt:
       "Contact Suranga Gems for private gemstone enquiries",
   },
+
+  "/journal": {
+    title:
+      "The Journal | Gemstone Guides by Suranga Gems",
+
+    description:
+      "Guides on buying, choosing and caring for natural sapphire, ruby and emerald from Suranga Gems.",
+
+    imageAlt:
+      "The Suranga Gems journal, gemstone guides and articles",
+  },
 };
+
+function getMetadataForPath(pathname) {
+  if (PAGE_METADATA[pathname]) {
+    return PAGE_METADATA[pathname];
+  }
+
+  if (pathname.startsWith("/gems/")) {
+    const slug = pathname.replace("/gems/", "");
+    const gemstone = getGemstoneById(slug);
+
+    if (gemstone) {
+      return {
+        title: `${gemstone.name} | Natural ${gemstone.origin} Gemstone | Suranga Gems`,
+        description: gemstone.metaDescription,
+        imageAlt: `${gemstone.name} natural gemstone from ${gemstone.origin}`,
+      };
+    }
+  }
+
+  if (pathname.startsWith("/journal/")) {
+    const slug = pathname.replace("/journal/", "");
+    const article = getArticleBySlug(slug);
+
+    if (article) {
+      return {
+        title: article.metaTitle,
+        description: article.metaDescription,
+        imageAlt: article.title,
+      };
+    }
+  }
+
+  return PAGE_METADATA["/"];
+}
 
 function updateMetaTag({
   selector,
@@ -99,9 +151,7 @@ function updateCanonicalLink(url) {
 }
 
 function updatePageMetadata(pathname) {
-  const metadata =
-    PAGE_METADATA[pathname] ||
-    PAGE_METADATA["/"];
+  const metadata = getMetadataForPath(pathname);
 
   const pageUrl =
     pathname === "/"
@@ -179,9 +229,21 @@ function App() {
   /* Opening loader */
 
   useEffect(() => {
+    const hasSeenLoader =
+      window.sessionStorage.getItem("suranga-loader-seen");
+
+    if (hasSeenLoader) {
+      setIsLoading(false);
+      return undefined;
+    }
+
     const timer = window.setTimeout(() => {
       setIsLoading(false);
-    }, 850);
+      window.sessionStorage.setItem(
+        "suranga-loader-seen",
+        "true"
+      );
+    }, 5000);
 
     return () => {
       window.clearTimeout(timer);
@@ -327,16 +389,40 @@ function App() {
         aria-hidden="true"
       >
         <div className="page-loader-mark">
-          <span className="page-loader-name">
-            Suranga Gems
-          </span>
+  <div className="page-loader-copy">
+    <div className="page-loader-brand">
+      <img
+        src={loaderLogo}
+        alt=""
+        className="page-loader-logo"
+      />
 
-          <span className="page-loader-line" />
+      <span className="page-loader-name">
+        Suranga Gems
+      </span>
+    </div>
 
-          <span className="page-loader-tagline">
-            Natural · Rare · Timeless
-          </span>
-        </div>
+    <span className="page-loader-line" />
+
+    <div
+      className="page-loader-words"
+      aria-label="Natural, Rare, Timeless"
+    >
+      <span className="page-loader-word page-loader-word-natural">
+        Natural
+      </span>
+
+      <span className="page-loader-word page-loader-word-rare">
+        Rare
+      </span>
+
+      <span className="page-loader-word page-loader-word-timeless">
+        Timeless
+      </span>
+    </div>
+  </div>
+</div>
+          
       </div>
 
       <div
@@ -362,6 +448,21 @@ function App() {
             <Route
               path="/contact"
               element={<ContactPage />}
+            />
+
+            <Route
+              path="/gems/:slug"
+              element={<GemDetailPage />}
+            />
+
+            <Route
+              path="/journal"
+              element={<JournalPage />}
+            />
+
+            <Route
+              path="/journal/:slug"
+              element={<JournalPostPage />}
             />
 
             <Route

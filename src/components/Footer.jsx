@@ -51,6 +51,7 @@ function Footer() {
 
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/journal">Journal</Link>
           <Link to="/contact">
             Contact Us
           </Link>
@@ -108,8 +109,15 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Suranga Gems.
-        All rights reserved.
+        <span>
+          © {new Date().getFullYear()} Suranga Gems.
+          All rights reserved.
+        </span>
+
+        <span className="footer-agency-credit">
+          Designed &amp; Developed by
+          <strong> ARK II</strong>
+        </span>
       </div>
     </footer>
   );

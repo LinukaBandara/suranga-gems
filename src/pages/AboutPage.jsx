@@ -2,6 +2,7 @@ import { Link } from "react-router";
 
 import {
   ArrowUpRight,
+  Building2,
   Gem,
   Globe2,
   Handshake,
@@ -42,19 +43,19 @@ const locations = [
     location: "Ilakaka",
     country: "Madagascar",
     description:
-      "A central point in Suranga Gems’ international gemstone relationships and sourcing network.",
+      "An established presence within one of Madagascar’s important gemstone regions, supporting trusted industry relationships and direct local connections.",
   },
   {
     location: "Colombo",
     country: "Sri Lanka",
     description:
-      "Supporting professional connections, consultations and relationships across Sri Lanka.",
+      "Supporting professional relationships, private consultations and gemstone connections across Sri Lanka.",
   },
   {
     location: "Balangoda",
     country: "Sri Lanka",
     description:
-      "A growing local presence connected to the company’s Sri Lankan roots and long-term future.",
+      "A growing presence connected to the company’s Sri Lankan roots and its long-term vision.",
   },
 ];
 
@@ -214,8 +215,8 @@ function AboutPage() {
               </p>
 
               <h2>
-                Connected across
-                <em> two countries.</em>
+                Rooted in Ilakaka,
+                <em> connected globally.</em>
               </h2>
             </div>
 
@@ -224,6 +225,78 @@ function AboutPage() {
               strokeWidth={0.8}
               aria-hidden="true"
             />
+          </div>
+
+          <div
+            className="madagascar-office-feature"
+            data-reveal="up"
+          >
+            <div className="madagascar-office-media">
+              <img
+                src="/images/madagascar-office.png"
+                alt="Suranga Gems office in Ilakaka, Madagascar"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div className="madagascar-office-shade" />
+
+              <div className="madagascar-office-caption">
+                <MapPin
+                  size={18}
+                  strokeWidth={1.5}
+                />
+
+                <span>
+                  Suranga Gems office — Ilakaka,
+                  Madagascar
+                </span>
+              </div>
+            </div>
+
+            <div className="madagascar-office-content">
+              <div className="madagascar-office-icon">
+                <Building2
+                  size={27}
+                  strokeWidth={1.4}
+                />
+              </div>
+
+              <p className="madagascar-office-eyebrow">
+                Madagascar Headquarters
+              </p>
+
+              <h3>
+                An established presence in the heart
+                of Ilakaka.
+              </h3>
+
+              <p>
+                Suranga Gems maintains a physical
+                presence in Ilakaka, one of
+                Madagascar’s internationally
+                recognised gemstone regions.
+              </p>
+
+              <p>
+                This location supports direct local
+                relationships, industry knowledge
+                and trusted connections within the
+                gemstone community.
+              </p>
+
+              <div className="madagascar-office-standard">
+                <ShieldCheck
+                  size={21}
+                  strokeWidth={1.5}
+                />
+
+                <span>
+                  Physical presence. Local knowledge.
+                  Global relationships.
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="presence-grid">

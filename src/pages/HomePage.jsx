@@ -24,45 +24,7 @@ import Hero from "../components/Hero";
 import Founder from "../components/Founder";
 import Values from "../components/Values";
 
-import blueGem from "../assets/blue-gem.webp";
-import pinkGem from "../assets/pink-gem.webp";
-import greenGem from "../assets/green-gem.webp";
-import goldGem from "../assets/gold-gem.webp";
-
-const gemstones = [
-  {
-    id: "blue-sapphire",
-    name: "Blue Sapphire",
-    origin: "Sri Lanka",
-    image: blueGem,
-    description:
-      "A vivid natural sapphire selected for its deep royal-blue character, crisp brilliance and timeless presence.",
-  },
-  {
-    id: "ruby",
-    name: "Ruby",
-    origin: "Madagascar",
-    image: pinkGem,
-    description:
-      "A richly saturated natural ruby with luminous red-pink tones, strong personality and exceptional visual energy.",
-  },
-  {
-    id: "emerald",
-    name: "Emerald",
-    origin: "Madagascar",
-    image: greenGem,
-    description:
-      "A striking natural emerald admired for its vivid green colour, architectural cut and distinctive internal character.",
-  },
-  {
-    id: "golden-sapphire",
-    name: "Golden Sapphire",
-    origin: "Sri Lanka",
-    image: goldGem,
-    description:
-      "A warm natural sapphire with golden depth, lively reflections and a refined glow suited to exceptional collections.",
-  },
-];
+import { gemstones } from "../data/gemstones";
 
 function GemShowcase({ onOpenGemstone }) {
   return (
@@ -131,7 +93,7 @@ function GemShowcase({ onOpenGemstone }) {
                       onClick={() => {
                         onOpenGemstone(index);
                       }}
-                      aria-label={`View ${gemstone.name}`}
+                      aria-label={`Quick view ${gemstone.name}`}
                     >
                       <img
                         src={gemstone.image}
@@ -156,21 +118,18 @@ function GemShowcase({ onOpenGemstone }) {
                         </strong>
                       </span>
                     </button>
-
-                    <button
-                      type="button"
-                      className="gemstone-arrow"
-                      onClick={() => {
-                        onOpenGemstone(index);
-                      }}
-                      aria-label={`Open ${gemstone.name} details`}
-                    >
-                      <ArrowUpRight
-                        size={18}
-                        strokeWidth={1.5}
-                      />
-                    </button>
                   </div>
+
+                  <Link
+                    to={`/gems/${gemstone.id}`}
+                    className="gemstone-details-link"
+                  >
+                    View full details
+                    <ArrowUpRight
+                      size={15}
+                      strokeWidth={1.6}
+                    />
+                  </Link>
                 </article>
               )
             )}
