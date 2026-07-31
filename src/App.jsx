@@ -243,7 +243,7 @@ function App() {
         "suranga-loader-seen",
         "true"
       );
-    }, 5000);
+    }, 4800);
 
     return () => {
       window.clearTimeout(timer);
