@@ -7066,3 +7066,20 @@ section[id] {
     letter-spacing: 0.08em !important;
   }
 }
+/* DESKTOP LOADER — HORIZONTAL CENTER ONLY */
+@media (min-width: 769px) {
+  .page-loader {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .page-loader-mark {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
