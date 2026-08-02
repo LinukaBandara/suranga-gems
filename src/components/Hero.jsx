@@ -9,7 +9,7 @@ function Hero() {
         aria-hidden="true"
       >
         <img
-          src="/images/hero-gems.png"
+          src="/images/hero-gems.webp"
           alt=""
           className="hero-image"
         />

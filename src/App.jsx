@@ -24,7 +24,7 @@ import loaderLogo from "./assets/suranga-logo-mark.svg";
 const SITE_URL = "https://surangagems.com";
 
 const SOCIAL_IMAGE =
-  `${SITE_URL}/images/hero-gems.png`;
+  `${SITE_URL}/images/og-suranga-gems.jpg`;
 
 const PAGE_METADATA = {
   "/": {
