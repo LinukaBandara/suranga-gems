@@ -2,7 +2,37 @@
 
 A premium, mobile-first brand website for **Suranga Gems**, presenting the founder, gemstone expertise, sourcing story and Sri Lanka–Madagascar presence through a refined luxury web experience.
 
-🔗 **Repository:** https://github.com/linuka7/suranga-gems
+## Project showcase
+
+The screenshots below show the final interface and responsive experience.
+
+### Hero
+
+![Suranga Gems Hero](docs/screenshots/hero.png)
+
+### About
+
+![Suranga Gems About](docs/screenshots/about.jpeg)
+
+### Founder
+
+![Suranga Gems Founder](docs/screenshots/founder.png)
+
+### Journal
+
+![Suranga Gems Journal](docs/screenshots/journal.png)
+
+### Contact
+
+![Suranga Gems Contact](docs/screenshots/contact.png)
+
+### Footer
+
+![Suranga Gems Footer](docs/screenshots/footer.png)
+
+### Mobile responsive navigation
+
+![Suranga Gems Mobile Navigation](docs/screenshots/Mbresponsivenavbar.png)
 
 ## About the project
 
@@ -29,6 +59,7 @@ The site is designed to communicate the brand and its story to gemstone buyers a
 - Gemstone collections presentation
 - Sourcing and business information
 - Gallery section
+- Journal/content section
 - Contact section
 - Smooth section-based navigation
 - Responsive typography and spacing
@@ -59,6 +90,15 @@ suranga-gems/
 │   ├── assets/
 │   ├── styles/
 │   └── ...
+├── docs/
+│   └── screenshots/
+│       ├── hero.png
+│       ├── about.jpeg
+│       ├── founder.png
+│       ├── journal.png
+│       ├── contact.png
+│       ├── footer.png
+│       └── Mbresponsivenavbar.png
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
