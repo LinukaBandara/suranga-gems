@@ -115,8 +115,15 @@ function Footer() {
         </span>
 
         <span className="footer-agency-credit">
-          Designed &amp; Developed by
-          <strong> ARK II</strong>
+          Designed &amp; Developed by{" "}
+          <a
+            href="https://ark-ii.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit ARK II website"
+          >
+            <strong>ARK II</strong>
+          </a>
         </span>
       </div>
     </footer>
